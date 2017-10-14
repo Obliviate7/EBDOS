@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" src="/css/master.css">
 
-    <title></title>
+    <title>EBDOS</title>
   </head>
   <body>
     <header class="mainHeader">

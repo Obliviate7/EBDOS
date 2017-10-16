@@ -1,9 +1,8 @@
 function confirmarPass() {
-  sellenocontrasena = document.querySelector("#pass");
-  if(sellenocontrasena == ":focus") {
-    var cpass = document.getElementById("#cpass");
-    cpass.style.display == "block";
-  } else {
-    cpass.style.display == "none";
-  }
+  var sellenocontrasena = document.getElementById("pass");
+  var isFocused = (sellenocontrasena == document.activeElement);
+
+  if(isFocused == true ){
+    document.getElementById("cpass").setAttribute("class","");
+}
 }

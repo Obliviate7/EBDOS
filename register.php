@@ -1,6 +1,5 @@
 <?php
 include("header.php");
-include("foter.php");
  ?>
 <!DOCTYPE html>
 <html>
@@ -10,10 +9,13 @@ include("foter.php");
       El Baul Dorado - Registro
     </title>
     <script src="js/funciones.js"></script>
+    <style media="screen">
+
+    </style>
   </head>
   <body>
     <h2>Registro</h2>
-    <form class="" action="register.php" method="post" enctype="multipart/form-data">
+    <form class="" action="register.php" method="POST" enctype="multipart/form-data">
       <div class="form-group">
       <label for="nombre">NOMBRE: </label>
       <input id="nombre" class="form-control" type="text" name="nombre" placeholder="Ingresa tu nombre">
@@ -30,10 +32,14 @@ include("foter.php");
       <label for="pass">CONTRASEÑA: </label>
       <input id="pass" class="form-control" type="text" name="pass" placeholder="********" onfocus="confirmarPass();">
       </div>
-      <div class="form-group" id="cpass">
+      <div class="form-group hidden" id="cpass">
       <label for="cpass">CONFIRMAR CONTRASEÑA: </label>
       <input class="form-control" type="text" name="cpass" placeholder="********">
+      </div>
+      <div class="form-group">
+        <input class="btn btn-success" type="submit" >
       </div>
     </form>
   </body>
 </html>
+<?php include("footer.php"); ?>

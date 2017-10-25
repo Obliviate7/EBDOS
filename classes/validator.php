@@ -22,19 +22,19 @@ public function checkPass2($pass, $pass2){
 //funcion general para validar toda la info
 public function validateInformation($data, db $db) {
 $errors = [];
-if (! checkNameSurname($data['usrName'])){
+if (! $this->checkNameSurname($data['usrName'])){
   $errors["usrName"] = "Ingresa un nombre valido";
 }
-if (! checkNameSurname($data['usrSurname'])) {
+if (! $this->checkNameSurname($data['usrSurname'])) {
   $errors["usrSurname"] = "Ingresa un apellido valido";
 }
-if (! checkEmail($data['email'])) {
+if (! $this->checkEmail($data['email'])) {
   $errors["email"] = "Ingresa un mail valido";
 }
-if (! checkPass($data['pass'])) {
+if (! $this->checkPass($data['pass'])) {
   $errors["pass"] = "Ingresa un password valido";
 }
-if (! checkPass2($data['pass'], $data['pass2'])) {
+if (! $this->checkPass2($data['pass'], $data['pass2'])) {
   $errors["pass2"] = "No coincide el password";
 }
 return $errors;

@@ -8,7 +8,7 @@ class dbMySQL extends db {
 //configura la conexion con la bd
   public function __construct() {
     //configurar con el host, el nombre de la base, y el puerto
-    $dsnDb = 'mysql:host=localhost;dbname=reglog;
+    $dsnDb = 'mysql:host=localhost;dbname=el_baul_dorado;
     charset=utf8mb4;port=3306';
     //configurar con el nombre de usuario de la bd
     $userDb ="root";

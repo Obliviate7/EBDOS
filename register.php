@@ -10,6 +10,41 @@ include_once("header.php");
   $passDefault = "";
   $pass2Default = "";
 
+if ($auth->isLogIn()) {
+  header("Location:index.php");exit;
+}
+
+$errors = [];
+if ($_POST) {
+  $errors = $validator->validateInformation($_POST, $db);
+
+  if (!isset($errors["usrName"])) {
+    $usrNameDefault = $_POST["usrName"];
+  }
+
+  if (!isset($errors["email"])) {
+    $emailDefault = $_POST["email"];
+  }
+
+  if (!isset($errors["username"])) {
+    $usernameDefault = $_POST["username"];
+  }
+
+  if (!isset($errors["telefono"])) {
+    $telefonoDefault = $_POST["telefono"];
+  }
+
+  if (count($errors) == 0) {
+    $user = new User($_POST);
+    $mail = $_POST["email"];
+
+    $user->guardarImagen($email);
+    $user = $db->guardarUsuario($user);
+
+    header("Location:perfilUsuario.php?mail=$email");exit;
+  }
+}
+
  ?>
 <!DOCTYPE html>
 <html>

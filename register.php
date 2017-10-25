@@ -4,9 +4,11 @@ include_once("support.php");
 require_once("classes/user.php");
 include_once("header.php");
 
-
-
-
+	$emailDefault = "";
+	$usrNameDefault = "";
+	$usrSurnameDefault = "";
+  $passDefault = "";
+  $pass2Default = "";
 
  ?>
 <!DOCTYPE html>
@@ -47,7 +49,7 @@ include_once("header.php");
       </div>
       <div class="form-group">
       <label for="pass">CONTRASEÑA: </label>
-      <input id="pass" class="form-control" type="text" name="pass" placeholder="********" onfocus="confirmarPass();">
+      <input id="pass" class="form-control" type="text" name="pass" placeholder="********" onfocus="confirmarPass();" value="">
       </div>
       <div class="form-group hidden" id="pass2">
       <label for="pass2">CONFIRMAR CONTRASEÑA: </label>

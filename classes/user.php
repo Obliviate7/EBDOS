@@ -121,7 +121,7 @@ class User {
     return $this->province;
   }
 
-  public function setCity($) {
+  public function setCity() {
     $this->city = $city;
   }
   public function getCity() {

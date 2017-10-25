@@ -13,11 +13,11 @@ class dbMySQL extends db {
     //configurar con el nombre de usuario de la bd
     $userDb ="root";
     //configurar con la contraseña del usuario de la bd
-    $passDb = "root";
+    $passDb = "Liliana01";
 
 //crea la conexion con la bd, si no se conecta indica error
     try {
-      $this->conn = new PDO($dsn, $user, $pass);
+      $this->conn = new PDO($dsnDb, $userDb, $passDb);
     } catch (Exception $e) {
       echo "La conexion a la base de datos falló: " . $e->getMessage();
     }

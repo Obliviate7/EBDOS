@@ -23,29 +23,50 @@ public function checkPass2($pass, $pass2){
 public function validarInformacion($data, db $db) {
 $errors = [];
 if (! checkNameSurname($data['usrName'])){
-  $errors["usrName"] = "El nombre es inválido";
+  $errors["usrName"] = "Ingresa un nombre valido";
 }
 if (! checkNameSurname($data['usrSurName']) {
-  $errors["usrSurname"] = "El apellido es inválido";
+  $errors["usrSurname"] = "Ingresa un apellido valido";
 }
 if (! checkEmail($data['email'])) {
-  $errors["email"] = "El email ingresado no es válido";
+  $errors["email"] = "Ingresa un mail valido";
 }
 if (! checkPass($data['pass'])) {
-  $errors["pass"] = "El password ingresado no es válido";
+  $errors["pass"] = "Ingresa un password valido";
 }
 if (! checkPass2($data['pass'], $data['pass2'])) {
-  $errors["pass2"] = "El password no coincide";
+  $errors["pass2"] = "No coincide el password";
 }
 return $errors;
 }
 
 //funcion general para validar el login
-  public function loginUser($informacion, db $db) {
-  $errores = [];
-  
+  public function loginUser($data, db $db) {
+  $errors = [];
+
+  foreach ($data as $key => $value) {
+    $data[$key] = trim($value);
   }
 
+  if ($data["email"] == "") {
+    $errors["email"] = "Debes completar el mail";
+  }
+  else if (filter_var($data["email"], FILTER_VALIDATE_EMAIL) == false) {
+    $errors["email"] = "Ingresa un mail valido";
+  } else if ($db->traerPorMail($data["email"]) == NULL) {
+    $errors["email"] = "El usuario no existe";
+  }
 
+  $user = $db->getById($data["email"]);
+
+  if ($data["pass"] == "") {
+    $errors["pass"] = "Debes completar la contraseña";
+  } else if ($user != NULL) {
+    if (password_verify($data["pass"], $user->getPassword()) == false) {
+      $errors["pass"] = "Contraseña incorrecta";
+    }
+  }
+  return $errors;
+  }
 }
  ?>

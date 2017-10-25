@@ -25,7 +25,7 @@ $errors = [];
 if (! checkNameSurname($data['usrName'])){
   $errors["usrName"] = "Ingresa un nombre valido";
 }
-if (! checkNameSurname($data['usrSurname']) {
+if (! checkNameSurname($data['usrSurname'])) {
   $errors["usrSurname"] = "Ingresa un apellido valido";
 }
 if (! checkEmail($data['email'])) {

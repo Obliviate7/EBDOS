@@ -35,7 +35,7 @@ if ($_POST) {
     $user->saveImage($email);
     $user = $db->saveUser($user);
 
-    header("Location:perfilUsuario.php?mail=$email");exit;
+    header("Location:index.php?mail=$email");exit;
   }
 }
 

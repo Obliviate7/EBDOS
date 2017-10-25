@@ -49,7 +49,9 @@ if ($_POST) {
     </title>
     <script src="js/funciones.js"></script>
     <style media="screen">
-
+    .hidden{
+      display: none;
+    }
     </style>
   </head>
   <body>

@@ -12,7 +12,7 @@
        <!-- Latest compiled and minified JavaScript -->
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-       <link rel="stylesheet" src="/css/stlyes.css">
+       <link rel="stylesheet" src="/css/styles.css">
 
     <title>EBDOS</title>
   </head>

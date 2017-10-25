@@ -26,20 +26,16 @@ if ($_POST) {
     $emailDefault = $_POST["email"];
   }
 
-  if (!isset($errors["username"])) {
-    $usernameDefault = $_POST["username"];
-  }
-
-  if (!isset($errors["telefono"])) {
-    $telefonoDefault = $_POST["telefono"];
+  if (!isset($errors["usrSurname"])) {
+    $usrSurnameDefault = $_POST["usrSurname"];
   }
 
   if (count($errors) == 0) {
     $user = new User($_POST);
     $mail = $_POST["email"];
 
-    $user->guardarImagen($email);
-    $user = $db->guardarUsuario($user);
+    $user->saveImage($email);
+    $user = $db->saveUser($user);
 
     header("Location:perfilUsuario.php?mail=$email");exit;
   }

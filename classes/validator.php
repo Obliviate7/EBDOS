@@ -20,7 +20,7 @@ public function checkPass2($pass, $pass2){
 }
 
 //funcion general para validar toda la info
-public function validarInformacion($data, db $db) {
+public function validateInformation($data, db $db) {
 $errors = [];
 if (! checkNameSurname($data['usrName'])){
   $errors["usrName"] = "Ingresa un nombre valido";

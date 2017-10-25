@@ -7,8 +7,6 @@ include_once("header.php");
 	$emailDefault = "";
 	$usrNameDefault = "";
 	$usrSurnameDefault = "";
-  $passDefault = "";
-  $pass2Default = "";
 
 if ($auth->isLogIn()) {
   header("Location:index.php");exit;
@@ -80,11 +78,11 @@ if ($_POST) {
       </div>
       <div class="form-group">
       <label for="pass">CONTRASEÑA: </label>
-        <input id="pass" class="form-control" type="text" name="pass" placeholder="********" onfocus="confirmarPass();" value="<?= $passDefault?>">
+        <input id="pass" class="form-control" type="text" name="pass" placeholder="********" onfocus="confirmarPass();" value="">
       </div>
       <div class="form-group hidden" id="pass2">
       <label for="pass2">CONFIRMAR CONTRASEÑA: </label>
-        <input class="form-control" type="text" name="pass2" placeholder="********" value="<?=  $pass2Default?> ">
+        <input class="form-control" type="text" name="pass2" placeholder="********" value="">
       </div>
       <div class="form-group">
         <input class="btn btn-success" type="submit" >

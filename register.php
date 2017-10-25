@@ -78,11 +78,11 @@ if ($_POST) {
       </div>
       <div class="form-group">
       <label for="pass">CONTRASEÑA: </label>
-        <input id="pass" class="form-control" type="text" name="pass" placeholder="********" onfocus="confirmarPass();" value="">
+        <input id="pass" class="form-control" type="text" name="pass" placeholder="********" onfocus="confirmarPass();">
       </div>
       <div class="form-group hidden" id="pass2">
       <label for="pass2">CONFIRMAR CONTRASEÑA: </label>
-        <input class="form-control" type="text" name="pass2" placeholder="********" value="">
+        <input class="form-control" type="text" name="pass2" placeholder="********">
       </div>
       <div class="form-group">
         <input class="btn btn-success" type="submit" >

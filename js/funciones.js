@@ -3,6 +3,6 @@ function confirmarPass() {
   var isFocused = (sellenocontrasena == document.activeElement);
 
   if(isFocused == true ){
-    document.getElementById("cpass").setAttribute("class","");
+    document.getElementById("pass2").setAttribute("class","");
 }
 }

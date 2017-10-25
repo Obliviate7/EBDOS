@@ -68,23 +68,23 @@ if ($_POST) {
     <form class="" action="register.php" method="POST" enctype="multipart/form-data">
       <div class="form-group">
       <label for="usrName">NOMBRE: </label>
-      <input id="usrName" class="form-control" type="text" name="usrName" placeholder="Ingresa tu nombre">
+        <input id="usrName" class="form-control" type="text" name="usrName" placeholder="Ingresa tu nombre" value="<?=$usrNameDefault?> ">
       </div>
       <div class="form-group">
       <label for="usrSurname">APELLIDO: </label>
-      <input id="usrSurname" class="form-control" type="text" name="usrSurname" placeholder="Ingresa tu apellido">
+        <input id="usrSurname" class="form-control" type="text" name="usrSurname" placeholder="Ingresa tu apellido" value="<?=$usrSurnameDefault?>  ">
       </div>
       <div class="form-group">
       <label for="email">EMAIL: </label>
-      <input id="email" class="form-control" type="text" name="email" placeholder="ejemplo@correo.com">
+        <input id="email" class="form-control" type="text" name="email" placeholder="ejemplo@correo.com" value="<?=	$emailDefault ?> ">
       </div>
       <div class="form-group">
       <label for="pass">CONTRASEÑA: </label>
-      <input id="pass" class="form-control" type="text" name="pass" placeholder="********" onfocus="confirmarPass();" value="">
+        <input id="pass" class="form-control" type="text" name="pass" placeholder="********" onfocus="confirmarPass();" value="<?= $passDefault?>">
       </div>
       <div class="form-group hidden" id="pass2">
       <label for="pass2">CONFIRMAR CONTRASEÑA: </label>
-      <input class="form-control" type="text" name="pass2" placeholder="********">
+        <input class="form-control" type="text" name="pass2" placeholder="********" value="<?=  $pass2Default?> ">
       </div>
       <div class="form-group">
         <input class="btn btn-success" type="submit" >

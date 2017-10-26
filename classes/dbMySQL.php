@@ -23,8 +23,14 @@ class dbMySQL extends db {
     }
   }
 
-  public function saveUser(User $email) {
-//crear la funcion para guardar usuario
+  public function saveUser(User $user) {
+    $query = $this->$conn->prepare("INSERT INTO users(usrName, usrSurname, email, pass) VALUES(:usrname, :usrsurname, :email, :pass)");
+    $query->bindValue(":usrname", $user->getUserName());
+    $query->bindValue(":usrsurname", $user->getUsrSurname());
+    $query->bindValue(":email", $user->getEmail());
+    $query->bindValue(":pass", $user->getPassword());
+    $query->execute();
+    
   }
 
   public function getAll() {

@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <?php
 require_once("db.php");
 class Validator {
@@ -71,7 +70,6 @@ return $errors;
   }
 }
  ?>
-=======
 <?php
 require_once("db.php");
 class Validator {

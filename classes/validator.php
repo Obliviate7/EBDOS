@@ -57,7 +57,7 @@ return $errors;
     $errors["email"] = "El usuario no existe";
   }
 
-  $user = $db->getByEmail($data["email"]);
+  $user = $db->getId($data["email"]);
 
   if ($data["pass"] == "") {
     $errors["pass"] = "Debes completar la contraseña";

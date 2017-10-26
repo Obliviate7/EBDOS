@@ -5,6 +5,7 @@ include_once("header.php");
 
   $emailDefault = "";
 
+  var_dump();
 
 if ($auth->isLogIn()) {
   header("Location:index.php");exit;

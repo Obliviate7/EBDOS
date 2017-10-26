@@ -40,8 +40,11 @@ class dbMySQL extends db {
       var_dump($all);
   }
 
-  public function getByEmail($email) {
-//crear la funcion para traer los datos del usuario buscandolo por email
+  public function getByEmail(User $usuario) {
+      $query = $this->conn->prepare("SELECT (email, pass) FROM users WHERES ( :email = $usuario)");
+      $query->bindValue(":email", $usuario->getEmail());
+      $query->execute();
   }
+
 }
   ?>

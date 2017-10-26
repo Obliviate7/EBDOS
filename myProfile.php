@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 <?php
 include_once("support.php");
@@ -125,8 +124,3 @@ if ($auth->isLogIn()) {
 <?php include("header.php"); ?>
 <?php include("footer.php"); ?>
 >>>>>>> Stashed changes
-=======
-<?php  ?>
-<?php include("header.php"); ?>
-<?php include("footer.php"); ?>
->>>>>>> parent of bd2eb75... qwwer

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?php
 include_once("support.php");
 require_once("classes/user.php");
@@ -118,3 +119,8 @@ if ($auth->isLogIn()) {
 
 
 <?php include("footer.php"); ?>
+=======
+<?php  ?>
+<?php include("header.php"); ?>
+<?php include("footer.php"); ?>
+>>>>>>> Stashed changes

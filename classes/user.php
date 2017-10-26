@@ -23,17 +23,17 @@ class User {
     $this->usrSurname =   $data["usrSurname"];
     $this->email =        $data["email"];
     $this->pass =         $data["pass"];
-    $this->birthDate =    $data["birthDate"];
-    $this->radioGenre =   $data["radioGenre"];
-    $this->email2 =       $data["email2"];
-    $this->country =      $data["country"];
-    $this->province =     $data["province"];
-    $this->city =         $data["city"];
-    $this->zipCode =      $data["zipCode"];
-    $this->mobile =       $data["mobile"];
-    $this->address =      $data["address"];
-    $this->webPage =      $data["webPage"];
-    $this->bio =          $data["bio"];
+    // $this->birthDate =    $data["birthDate"];
+    // $this->radioGenre =   $data["radioGenre"];
+    // $this->email2 =       $data["email2"];
+    // $this->country =      $data["country"];
+    // $this->province =     $data["province"];
+    // $this->city =         $data["city"];
+    // $this->zipCode =      $data["zipCode"];
+    // $this->mobile =       $data["mobile"];
+    // $this->address =      $data["address"];
+    // $this->webPage =      $data["webPage"];
+    // $this->bio =          $data["bio"];
 
     if (isset($data["id"])) {
       $this->pass = $data["pass"];
@@ -44,11 +44,11 @@ class User {
   }
 
   public function saveImage() {
-    $imgName=$_FILES["avatar"]["name"];
-    $imgFile=$_FILES["avatar"]["tmp_name"];
-    $ext = pathinfo($imgName, PATHINFO_EXTENSION);
-    $myFile = "avatars/" . $this->getEmail() . "." . $ext;
-    move_uploaded_file($imgFile, $myFile);
+    // $imgName=$_FILES["avatar"]["name"];
+    // $imgFile=$_FILES["avatar"]["tmp_name"];
+    // $ext = pathinfo($imgName, PATHINFO_EXTENSION);
+    // $myFile = "avatars/" . $this->getEmail() . "." . $ext;
+    // move_uploaded_file($imgFile, $myFile);
   }
 
   public function setId($id) {

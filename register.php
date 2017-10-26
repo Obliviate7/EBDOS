@@ -30,7 +30,7 @@ if ($_POST) {
 
   if (count($errors) == 0) {
     $user = new User($_POST);
-    $mail = $_POST["email"];
+    $email = $_POST["email"];
 
     $user->saveImage($email);
     $user = $db->saveUser($user);

@@ -53,11 +53,11 @@ return $errors;
   }
   else if (filter_var($data["email"], FILTER_VALIDATE_EMAIL) == false) {
     $errors["email"] = "Ingresa un mail valido";
-  } else if ($db->traerPorMail($data["email"]) == NULL) {
+  } else if ($db->getByEmail($data["email"]) == NULL) {
     $errors["email"] = "El usuario no existe";
   }
 
-  $user = $db->getById($data["email"]);
+  $user = $db->getId($data["email"]);
 
   if ($data["pass"] == "") {
     $errors["pass"] = "Debes completar la contraseña";

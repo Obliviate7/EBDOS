@@ -1,5 +1,4 @@
 <?php
-
 include_once("support.php");
 require_once("classes/user.php");
 include_once("header.php");
@@ -8,36 +7,29 @@ include_once("header.php");
 	$usrNameDefault = "";
 	$usrSurnameDefault = "";
 
-if ($auth->isLogIn()) {
-  header("Location:index.php");exit;
-}
-
-$errors = [];
-if ($_POST) {
-  $errors = $validator->validateInformation($_POST, $db);
-
-  if (!isset($errors["usrName"])) {
-    $usrNameDefault = $_POST["usrName"];
-  }
-
-  if (!isset($errors["email"])) {
-    $emailDefault = $_POST["email"];
-  }
-
-  if (!isset($errors["usrSurname"])) {
-    $usrSurnameDefault = $_POST["usrSurname"];
-  }
-
-  if (count($errors) == 0) {
-    $user = new User($_POST);
-    $email = $_POST["email"];
-
-    $user->saveImage($email);
-    $user = $db->saveUser($user);
-
-    header("Location:index.php?mail=$email");exit;
-  }
-}
+	if ($auth->isLogIn()) {
+	  header("Location:index.php");exit;
+	}
+	$errors = [];
+	if ($_POST) {
+	  $errors = $validator->validateInformation($_POST, $db);
+	  if (!isset($errors["usrName"])) {
+	    $usrNameDefault = $_POST["usrName"];
+	  }
+	  if (!isset($errors["email"])) {
+	    $emailDefault = $_POST["email"];
+	  }
+	  if (!isset($errors["usrSurname"])) {
+	    $usrSurnameDefault = $_POST["usrSurname"];
+	  }
+	  if (count($errors) == 0) {
+	    $user = new User($_POST);
+	    $email = $_POST["email"];
+	    $user->saveImage($email);
+	    $user = $db->saveUser($user);
+	    header("Location:index.php?mail=$email");exit;
+	  }
+	}
 
  ?>
 <!DOCTYPE html>
@@ -59,7 +51,7 @@ if ($_POST) {
         <h2>Registro</h2>
     </div>
     <ul class="errors">
-      <?php foreach ($errors as $error) : ?>
+  <?php foreach ($errors as $error) : ?>
       <li>
         <?=$error?>
       </li>

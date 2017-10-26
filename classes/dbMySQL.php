@@ -41,9 +41,15 @@ class dbMySQL extends db {
   }
 
   public function getByEmail($usuario) {
-      $query = $this->conn->prepare("SELECT (email, pass) FROM users WHERES ( :email =$usuario )");
-      $query->bindValue(":email", $usuario->getEmail());
+      $query = $this->conn->prepare("SELECT (email, pass) FROM users WHERE ( :email =$usuario )");
       $query->execute();
+      $array = $query->fetch();
+      if ($array != NULL) {
+        return new User($array);
+      }
+      else {
+        return NULL;
+      }
   }
 
 }

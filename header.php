@@ -42,30 +42,24 @@ include_once("header.php");
            <li><a href="faq.php">FAQ's</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
-            <li>
-               <a href="myProfile.php">
-                 <?php
-                 if ($auth->isLogIn()){
-                   echo $_SESSION['email'];
-                   //cambiar info del perfil
-                 }
-                 else{
-                   echo "";
-                 }
-                 ?>
-               </a>
-             </li>
-             <li>
-               <a href="logout.php">Deslogear</a>
-             </li>
-           <?php /*else:*/ ?>
-             <li>
-               <a href="register.php">Register</a>
-             </li>
-             <li>
-               <a href="login.php">Login</a>
-             </li>
-           <?php/* endif;*/ ?>
+            <?php if ($auth->isLogIn()){?>
+                <li>
+                    <a href="myProfile.php"><?php echo $_SESSION['email']; ?></a>
+                </li>
+                <li>
+                  <a href="logout.php">Deslogear</a>
+                </li>
+            <?php }
+            else{ ?>
+                <li>
+                    <a href="register.php">Register</a>
+                </li>
+                <li>
+                  <a href="login.php">Login</a>
+                </li>
+            <?php
+            }
+            ?>
          </ul>
          </div>
          </nav>

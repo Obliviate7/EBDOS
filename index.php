@@ -6,9 +6,11 @@
     <title></title>
   </head>
   <body>
+  
     <section class="carousel">
       <img class="girlspics" src="images/girls.jpg" alt="Girls">
     </section>
+
   </body>
 </html>
 

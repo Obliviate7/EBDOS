@@ -41,6 +41,7 @@ if ($auth->isLogIn()) {
     </title>
   </head>
   <body>
+    <div class="container">
     <div class="jumbotron">
         <h2>Perfil</h2>
     </div>
@@ -52,7 +53,7 @@ if ($auth->isLogIn()) {
     <?php endforeach; ?>
     </ul>
     <form class="" action="myProfile.php" method="POST" enctype="multipart/form-data">
-
+  <div class="form-group">
       <label for="usrName">NOMBRE: </label>
         <input id="usrName" class="form-control" type="text" name="usrName" placeholder="Nombre" value="<?=$usrNameDefault?>">
       </div>
@@ -62,10 +63,20 @@ if ($auth->isLogIn()) {
       </div>
       <div class="form-group">
       <label for="birthDate">FECHA NACIMIENTO: </label>
-        <input id="birthDate" class="form-control" type="text" name="birthDate" placeholder="Fecha de nacimiento" value="<?=$birthDateDefault?>">
+        <input id="birthDate" class="form-control" type="date" name="birthDate" placeholder="Fecha de nacimiento" value="<?=$birthDateDefault?>">
       </div>
       <div class="form-group">
       <label for="radioGenre">GENERO: </label>
+
+      <div class="radio">
+           <label><input type="radio" name="radioGenre" value="Mujer" required checked="checked">Mujer</label>
+         </div>
+         <div class="radio">
+           <label><input type="radio" name="radioGenre" value="Hombre">Hombre</label>
+         </div>
+
+
+
         <input id="radioGenre" class="form-control" type="text" name="radioGenre" placeholder="Genero" value="<?=$radioGenreDefault?>">
       </div>
       <div class="form-group">
@@ -98,11 +109,7 @@ if ($auth->isLogIn()) {
       </div>
       <div class="form-group">
       <label for="bio">BIO: </label>
-        <input id="bio" class="form-control" type="text" name="bio" placeholder="Biografia" value="<?=$bioDefault?>">
-      </div>
-      <div class="form-group">
-      <label for="email">EMAIL: </label>
-        <input id="email" class="form-control" type="text" name="email" placeholder="ejemplo@correo.com" value="<?=$emailDefault?>">
+        <textarea id="bio" class="form-control" rows="5" name="bio" placeholder="Biografia" value="<?=$bioDefault?>"></textarea>
       </div>
       <div class="form-group">
       <label for="pass">CONTRASEÑA: </label>
@@ -112,6 +119,7 @@ if ($auth->isLogIn()) {
         <input class="btn btn-success" type="submit" >
       </div>
     </form>
+        </div>
   </body>
 </html>
 

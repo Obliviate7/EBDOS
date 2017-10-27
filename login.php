@@ -31,9 +31,11 @@ if ($auth->isLogIn()) {
     </title>
   </head>
   <body>
+    <div class="container">
     <div class="jumbotron">
         <h2>Login</h2>
     </div>
+
     <ul class="errors">
   <?php foreach ($errors as $error): ?>
       <li>
@@ -56,6 +58,7 @@ if ($auth->isLogIn()) {
         <input class="btn btn-success" type="submit" >
       </div>
     </form>
+      </div>
   </body>
 </html>
 

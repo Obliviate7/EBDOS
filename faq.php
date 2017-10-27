@@ -1,5 +1,6 @@
 <?php  ?>
 <?php include("header.php"); ?>
+<div class="container">
 <div class="containerFaqs">
   <h2 class="titleFaqs">FAQ'S</h2>
   <p>Tienes preguntas? aca te respondemos las mas frecuentes, si no encuentras tu pregunta aca, envianos un mail a "consultas@elbauldorado.com"</p>
@@ -65,4 +66,5 @@
     </div>
   </div>
 </div>
+  </div>
 <?php include("footer.php"); ?>

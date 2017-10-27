@@ -7,7 +7,6 @@ include_once("header.php");
   $usrNameDefault = "";
   $usrSurnameDefault = "";
   $birthDateDefault = "";
-  $radioGenreDefault = "";
   $countryDefault = "";
   $provinceDefault = "";
   $cityDefault = "";
@@ -73,12 +72,7 @@ if ($auth->isLogIn()) {
          </div>
          <div class="radio">
            <label><input type="radio" name="radioGenre" value="Hombre">Hombre</label>
-         </div>
-
-
-
-        <input id="radioGenre" class="form-control" type="text" name="radioGenre" placeholder="Genero" value="<?=$radioGenreDefault?>">
-      </div>
+  </div>
       <div class="form-group">
       <label for="country">PAIS: </label>
         <input id="country" class="form-control" type="text" name="country" placeholder="Pais" value="<?=$countryDefault?>">

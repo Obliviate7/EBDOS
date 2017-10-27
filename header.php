@@ -3,23 +3,16 @@ include_once("support.php");
 require_once("classes/user.php");
 include_once("header.php");
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Playfair+Display:i" rel="stylesheet">
-       <!-- Latest compiled and minified CSS -->
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-       <!-- Optional theme -->
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-       <!-- Latest compiled and minified JavaScript -->
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
        <link rel="stylesheet" src="/css/styles.css">
-
     <title>EBDOS</title>
   </head>
   <body>
@@ -49,17 +42,14 @@ include_once("header.php");
                 <li>
                   <a href="logout.php">Deslogear</a>
                 </li>
-            <?php }
-            else{ ?>
+            <?php } else{ ?>
                 <li>
                     <a href="register.php">Register</a>
                 </li>
                 <li>
                   <a href="login.php">Login</a>
                 </li>
-            <?php
-            }
-            ?>
+            <?php } ?>
          </ul>
          </div>
          </nav>

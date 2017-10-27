@@ -54,6 +54,12 @@ if ($auth->isLogIn()) {
         <input id="pass" class="form-control" type="password" name="pass" placeholder="********">
       </div>
 
+      <div class="checkbox">
+        <label><input type="checkbox" name="rememberMe">Recuerdame</label>
+      </div>
+      <div class="forgot">
+          <a href="forgotPassword.php" class="buttonForgotPassword">Olvidé mi contraseña</a>
+      </div>
       <div class="form-group">
         <input class="btn btn-success" type="submit" >
       </div>

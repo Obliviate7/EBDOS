@@ -18,7 +18,7 @@ include_once("header.php");
   $bioDefault = "";
 
 if ($auth->isLogIn()) {
-  header("Location:index.php");exit;
+//  header("Location:index.php");exit;
 }
 	$errors = [];
 	if ($_POST) {

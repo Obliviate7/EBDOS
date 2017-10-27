@@ -19,8 +19,8 @@ class User {
   private $password;
 
   public function __construct(Array $data) {
-    $this->usrName =      $data["usrName"];
-    $this->usrSurname =   $data["usrSurname"];
+  //  $this->usrName =      $data["usrName"];
+  //   $this->usrSurname =   $data["usrSurname"];
     $this->email =        $data["email"];
     $this->pass =         $data["pass"];
     // $this->birthDate =    $data["birthDate"];

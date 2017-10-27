@@ -11,7 +11,8 @@ if ($auth->isLogIn()) {
 }
 	$errors = [];
 	if ($_POST) {
-		$errors = $validator->loginUser($_POST, $db);
+		//$errors = $validator->loginUser($_POST, $db);
+    $errors = [];
 		if (count($errors) == 0) {
       $auth->logIn($_POST["email"]);
 			if (isset($_POST["rememberMe"])) {

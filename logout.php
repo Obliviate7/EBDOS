@@ -1,5 +1,5 @@
 <?php
-require("support.php");
-$auth->logOut();
-header("Location:index.php");exit;
+  require("support.php");
+  $auth->logOut();
+  header("Location:index.php");exit;
 ?>

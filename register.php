@@ -1,12 +1,8 @@
 <?php
-include_once("support.php");
-require_once("classes/user.php");
 include_once("header.php");
-
 	$emailDefault = "";
 	$usrNameDefault = "";
 	$usrSurnameDefault = "";
-
 	if ($auth->isLogIn()) {
 	  header("Location:index.php");exit;
 	}
@@ -30,33 +26,18 @@ include_once("header.php");
 	    header("Location:index.php?mail=$email");exit;
 	  }
 	}
-
  ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>
-      El Baul Dorado - Registro
-    </title>
-    <script src="js/funciones.js"></script>
-    <style media="screen">
-    .hidden{
-      display: none;
-    }
-    </style>
-  </head>
-  <body>
+		<div class="container">
     <div class="jumbotron">
         <h2>Registro</h2>
     </div>
-    <ul class="errors">
   <?php foreach ($errors as $error) : ?>
+		<ul class="alert alert-danger">
       <li>
         <?=$error?>
       </li>
+		 </ul>
     <?php endforeach; ?>
-    </ul>
     <form class="" action="register.php" method="POST" enctype="multipart/form-data">
       <div class="form-group">
       <label for="usrName">NOMBRE: </label>
@@ -72,7 +53,7 @@ include_once("header.php");
       </div>
       <div class="form-group">
       <label for="pass">CONTRASEÑA: </label>
-        <input id="pass" class="form-control" type="password" name="pass" placeholder="********" onfocus="confirmarPass();">
+        <input id="pass" class="form-control" type="password" name="pass" placeholder="********" onfocus="confirmPass();">
       </div>
       <div class="form-group hidden" id="pass2">
       <label for="pass2">CONFIRMAR CONTRASEÑA: </label>
@@ -82,6 +63,4 @@ include_once("header.php");
         <input class="btn btn-success" type="submit" >
       </div>
     </form>
-  </body>
-</html>
 <?php include("footer.php"); ?>

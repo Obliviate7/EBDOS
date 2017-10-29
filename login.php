@@ -1,11 +1,6 @@
 <?php
-include_once("support.php");
-require_once("classes/user.php");
 include_once("header.php");
-
   $emailDefault = "";
-
-
 if ($auth->isLogIn()) {
   header("Location:index.php");exit;
 }
@@ -22,29 +17,18 @@ if ($auth->isLogIn()) {
 		}
 	}
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>
-      El Baul Dorado - Login
-    </title>
-  </head>
-  <body>
     <div class="container">
     <div class="jumbotron">
         <h2>Login</h2>
     </div>
-
-    <ul class="errors">
   <?php foreach ($errors as $error): ?>
+      <ul class="alert alert-danger">
       <li>
         <?=$error?>
       </li>
+        </ul>
     <?php endforeach; ?>
-    </ul>
     <form class="" action="login.php" method="POST" enctype="multipart/form-data">
-
       <div class="form-group">
       <label for="email">EMAIL: </label>
         <input id="email" class="form-control" type="text" name="email" placeholder="ejemplo@correo.com" value="<?=$emailDefault?>">
@@ -53,7 +37,6 @@ if ($auth->isLogIn()) {
       <label for="pass">CONTRASEÑA: </label>
         <input id="pass" class="form-control" type="password" name="pass" placeholder="********">
       </div>
-
       <div class="checkbox">
         <label><input type="checkbox" name="rememberMe">Recuerdame</label>
       </div>
@@ -64,10 +47,4 @@ if ($auth->isLogIn()) {
         <input class="btn btn-success" type="submit" >
       </div>
     </form>
-      </div>
-  </body>
-</html>
-
-
-
 <?php include("footer.php"); ?>

@@ -1,8 +1,5 @@
 <?php
-include_once("support.php");
-require_once("classes/user.php");
 include_once("header.php");
-
   $emailDefault = "";
   $usrNameDefault = "";
   $usrSurnameDefault = "";
@@ -15,7 +12,6 @@ include_once("header.php");
   $addressDefault = "";
   $webPageDefault = "";
   $bioDefault = "";
-
 if ($auth->isLogIn()) {
 //  header("Location:index.php");exit;
 }
@@ -31,28 +27,19 @@ if ($auth->isLogIn()) {
 		}
 	}
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>
-      El Baul Dorado - Perfil
-    </title>
-  </head>
-  <body>
     <div class="container">
     <div class="jumbotron">
         <h2>Perfil</h2>
     </div>
-    <ul class="errors">
   <?php foreach ($errors as $error): ?>
+    <ul class="alert alert-danger">
       <li>
         <?=$error?>
       </li>
+          </ul>
     <?php endforeach; ?>
-    </ul>
     <form class="" action="myProfile.php" method="POST" enctype="multipart/form-data">
-  <div class="form-group">
+      <div class="form-group">
       <label for="usrName">NOMBRE: </label>
         <input id="usrName" class="form-control" type="text" name="usrName" placeholder="Nombre" value="<?=$usrNameDefault?>">
       </div>
@@ -66,13 +53,12 @@ if ($auth->isLogIn()) {
       </div>
       <div class="form-group">
       <label for="radioGenre">GENERO: </label>
-
-      <div class="radio">
+        <div class="radio">
            <label><input type="radio" name="radioGenre" value="Mujer" required checked="checked">Mujer</label>
          </div>
          <div class="radio">
            <label><input type="radio" name="radioGenre" value="Hombre">Hombre</label>
-  </div>
+        </div>
       <div class="form-group">
       <label for="country">PAIS: </label>
         <input id="country" class="form-control" type="text" name="country" placeholder="Pais" value="<?=$countryDefault?>">
@@ -113,8 +99,4 @@ if ($auth->isLogIn()) {
         <input class="btn btn-success" type="submit" >
       </div>
     </form>
-        </div>
-  </body>
-</html>
-
 <?php include("footer.php"); ?>

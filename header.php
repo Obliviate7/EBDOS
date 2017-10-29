@@ -8,12 +8,18 @@ include_once("header.php");
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" src="/css/styles.css">
        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Playfair+Display:i" rel="stylesheet">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-       <link rel="stylesheet" src="/css/styles.css">
     <title>EBDOS</title>
+    <script src="js/functions.js"></script>
+    <style media="screen">
+    .hidden{
+      display: none;
+    }
+    </style>
   </head>
   <body>
     <header class="mainHeader">
@@ -54,7 +60,4 @@ include_once("header.php");
          </div>
          </nav>
 <?php var_dump($auth->isLogIn());
-
 ?>
-  </body>
-</html>

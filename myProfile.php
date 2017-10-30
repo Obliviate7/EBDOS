@@ -1,10 +1,10 @@
 <?php
   include_once("header.php");
-
+  // echo "<pre>";
   if ($auth->isLogIn()) {
 
     $infoUser = $db->getByEmail($_SESSION['userLoginOk']);
-      // echo "<pre>";
+
     // var_dump($infoUser);
     // echo $infoUser->getUsrName();
     //  header("Location:index.php");exit;
@@ -22,13 +22,13 @@
     $webPageDefault =     $infoUser->getWebPage();
     $bioDefault =         $infoUser->getBio();
   // echo "</pre>";
-  /*if ($_POST) {
+  if ($_POST) {
     $errors = $validator->modifyUser($_POST, $db);
     if (count($errors) == 0) {
         $auth->logIn($_POST["email"]);
       header("Location:index.php");
     }
-  }*/
+  }
   ?>
   <div class="container">
     <div class="page-header">
@@ -100,8 +100,12 @@
       </div>
       <div class="form-group">
         <label for="pass">Contraseña: </label>
-        <input id="pass" class="form-control" type="password" name="pass" placeholder="********">
+        <input id="pass" class="form-control" type="password" name="pass" placeholder="********" onfocus="confirmPass()";>
       </div>
+      <div class="form-group hidden" id="pass2">
+				<label for="pass2">Confirmar contraseña: </label>
+				<input class="form-control" type="password" name="pass2" placeholder="********">
+			</div>
       <div class="form-group">
         <input class="btn btn-success" type="submit" >
       </div>

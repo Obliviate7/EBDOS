@@ -39,7 +39,7 @@
         return NULL;
       }
     }
-    public function modifyUser(){
+    public function modifyUser(User $usuario){
       $query = $this->conn->prepare("UPDATE users SET usrName = :usrname, usrSurname = :usrsurname, email = :email, pass = :pass WHERE email = :email");
       $query->bindValue(":usrname", $usuario->getUsrName());
       $query->bindValue(":usrsurname", $usuario->getUsrSurname());

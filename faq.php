@@ -2,7 +2,7 @@
 <?php include("header.php"); ?>
 <div class="container">
 <div class="containerFaqs">
-  <h2 class="titleFaqs">FAQ'S</h2>
+  <h2 class="page-header">FAQ'S</h2>
   <p>Tienes preguntas? aca te respondemos las mas frecuentes, si no encuentras tu pregunta aca, envianos un mail a "consultas@elbauldorado.com"</p>
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">

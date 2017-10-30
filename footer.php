@@ -1,5 +1,5 @@
         <?php  ?>
-        <footer class="text-muted" class="text-center" >
+        <footer class="text-muted">
           El Baul Dorado 2017
         </footer>
       </div>

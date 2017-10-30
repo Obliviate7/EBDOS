@@ -1,102 +1,109 @@
 <?php
-include_once("header.php");
-  $emailDefault = "";
-  $usrNameDefault = "";
-  $usrSurnameDefault = "";
-  $birthDateDefault = "";
-  $countryDefault = "";
-  $provinceDefault = "";
-  $cityDefault = "";
-  $zipCodeDefault = "";
-  $mobileDefault = "";
-  $addressDefault = "";
-  $webPageDefault = "";
-  $bioDefault = "";
-if ($auth->isLogIn()) {
-//  header("Location:index.php");exit;
-}
-	$errors = [];
-	if ($_POST) {
-		$errors = $validator->loginUser($_POST, $db);
-		if (count($errors) == 0) {
-      $auth->logIn($_POST["email"]);
-			if (isset($_POST["rememberMe"])) {
-				$auth->rememberMe($_POST["email"]);
-			}
+  include_once("header.php");
+
+  if ($auth->isLogIn()) {
+
+    $infoUser = $db->getByEmail($_SESSION['userLoginOk']);
+      // echo "<pre>";
+    // var_dump($infoUser);
+    // echo $infoUser->getUsrName();
+    //  header("Location:index.php");exit;
+  }
+    $errors = [];
+    $usrNameDefault =     $infoUser->getUsrName();
+    $usrSurnameDefault =  $infoUser->getUsrSurName();
+    $birthDateDefault =   $infoUser->getBirthDate();
+    $countryDefault =     $infoUser->getCountry();
+    $provinceDefault =    $infoUser->getProvince();
+    $cityDefault =        $infoUser->getCity();
+    $zipCodeDefault =     $infoUser->getZipCode();
+    $mobileDefault =      $infoUser->getMobile();
+    $addressDefault =     $infoUser->getAddress();
+    $webPageDefault =     $infoUser->getWebPage();
+    $bioDefault =         $infoUser->getBio();
+  // echo "</pre>";
+  /*if ($_POST) {
+    $errors = $validator->modifyUser($_POST, $db);
+    if (count($errors) == 0) {
+        $auth->logIn($_POST["email"]);
       header("Location:index.php");
-		}
-	}
-?>
-    <div class="container">
-    <div class="jumbotron">
-        <h2>Perfil</h2>
+    }
+  }*/
+  ?>
+  <div class="container">
+    <div class="page-header">
+      <h2>Perfil</h2>
     </div>
-  <?php foreach ($errors as $error): ?>
+    <?php foreach ($errors as $error): ?>
     <ul class="alert alert-danger">
       <li>
         <?=$error?>
       </li>
-          </ul>
+    </ul>
     <?php endforeach; ?>
     <form class="" action="myProfile.php" method="POST" enctype="multipart/form-data">
       <div class="form-group">
-      <label for="usrName">NOMBRE: </label>
-        <input id="usrName" class="form-control" type="text" name="usrName" placeholder="Nombre" value="<?=$usrNameDefault?>">
+        <label for="usrName">Nombre: </label>
+        <input id="usrName" class="form-control" type="text" name="usrName" placeholder="Nombre" value="<?= $usrNameDefault ?>">
       </div>
       <div class="form-group">
-      <label for="usrSurname">APELLIDO: </label>
-        <input id="usrSurname" class="form-control" type="text" name="usrSurname" placeholder="Apellido" value="<?=$usrSurnameDefault?>">
+        <label for="usrSurname">Apellido: </label>
+        <input id="usrSurname" class="form-control" type="text" name="usrSurname" placeholder="Apellido" value="<?= $usrSurnameDefault?>">
       </div>
       <div class="form-group">
-      <label for="birthDate">FECHA NACIMIENTO: </label>
+        <label for="birthDate">Fecha de nacimiento: </label>
         <input id="birthDate" class="form-control" type="date" name="birthDate" placeholder="Fecha de nacimiento" value="<?=$birthDateDefault?>">
       </div>
       <div class="form-group">
-      <label for="radioGenre">GENERO: </label>
-        <div class="radio">
-           <label><input type="radio" name="radioGenre" value="Mujer" required checked="checked">Mujer</label>
-         </div>
-         <div class="radio">
-           <label><input type="radio" name="radioGenre" value="Hombre">Hombre</label>
-        </div>
+        <label for="radioGenre">Genero: </label>
+      <div class="radio">
+        <label><input type="radio" name="radioGenre" value="Mujer" required checked="checked">Mujer</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="radioGenre" value="Hombre">Hombre</label>
+      </div>
       <div class="form-group">
-      <label for="country">PAIS: </label>
+        <label for="country">Pais: </label>
         <input id="country" class="form-control" type="text" name="country" placeholder="Pais" value="<?=$countryDefault?>">
       </div>
       <div class="form-group">
-      <label for="province">PROVINCIA: </label>
+        <label for="province">Provincia: </label>
         <input id="province" class="form-control" type="text" name="province" placeholder="Provincia" value="<?=$provinceDefault?>">
       </div>
       <div class="form-group">
-      <label for="city">CIUDAD: </label>
+        <label for="city">Ciudad: </label>
         <input id="city" class="form-control" type="text" name="city" placeholder="Ciudad" value="<?=$cityDefault?>">
       </div>
       <div class="form-group">
-      <label for="zipCode">CODIGO POSTAL: </label>
+        <label for="zipCode">Codigo postal: </label>
         <input id="zipCode" class="form-control" type="text" name="zipCode" placeholder="Codigo postal" value="<?=$zipCodeDefault?>">
       </div>
       <div class="form-group">
-      <label for="mobile">TELEFONO CELULAR: </label>
+        <label for="mobile">Telefono celular: </label>
         <input id="mobile" class="form-control" type="text" name="mobile" placeholder="Celular" value="<?=$mobileDefault?>">
       </div>
       <div class="form-group">
-      <label for="address">DIRECCION: </label>
+        <label for="address">Dirección: </label>
         <input id="address" class="form-control" type="text" name="address" placeholder="Direccion" value="<?=$addressDefault?>">
       </div>
       <div class="form-group">
-      <label for="webPage">PAGINA WEB: </label>
+        <label for="webPage">Pagina web: </label>
         <input id="webPage" class="form-control" type="text" name="webPage" placeholder="Pagina web" value="<?=$webPageDefault?>">
       </div>
       <div class="form-group">
-      <label for="bio">BIO: </label>
+        <label for="bio">Bio: </label>
         <textarea id="bio" class="form-control" rows="5" name="bio" placeholder="Biografia" value="<?=$bioDefault?>"></textarea>
       </div>
       <div class="form-group">
-      <label for="pass">CONTRASEÑA: </label>
+        <label for="avatar">Foto de Perfil: </label>
+        <input type="file" name="avatar">
+      </div>
+      <div class="form-group">
+        <label for="pass">Contraseña: </label>
         <input id="pass" class="form-control" type="password" name="pass" placeholder="********">
       </div>
       <div class="form-group">
         <input class="btn btn-success" type="submit" >
       </div>
     </form>
-<?php include("footer.php"); ?>
+    <?php include("footer.php"); ?>

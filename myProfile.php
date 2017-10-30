@@ -1,10 +1,18 @@
 <?php
+/*el perfil muestra toda la informacion que esta en la base del usuario logeado,
+ARREGLAR:
+1  agregar las verificaciones de cada campo, por ejemplo que sean mayor a 3 caracteres,
+2  agregar la verificacion que coincida el pass dos veces
+3  que muestre si hay errores
+4  como la contraseña no la trae, agregar una verificacion que si la contraseña esta vacia dejar la anterior
+5 hacer que funcione el subir imagen
+6 despues de hacer un cambio, en los input no los muestra, los muestra luego de hacer otro submit, arreglar eso
+7 hacer que funcione el radio button
+*/
   include_once("header.php");
-  echo "<pre>";
+  // echo "<pre>";
   if ($auth->isLogIn()) {
-
     $infoUser = $db->getByEmail($_SESSION['userLoginOk']);
-
     $usrNameDefault =     $infoUser->getUsrName();
     $usrSurnameDefault =  $infoUser->getUsrSurName();
     $birthDateDefault =   $infoUser->getBirthDate();
@@ -16,18 +24,18 @@
     $addressDefault =     $infoUser->getAddress();
     $webPageDefault =     $infoUser->getWebPage();
     $bioDefault =         $infoUser->getBio();
-
-     var_dump($infoUser);
-     var_dump($_POST);
+    //Activar los var_dump para ver que se esta enviando arreglar la persistencia
+    //activar los pre para ver los errores
+    //  var_dump($infoUser);
+    //  var_dump($_POST);
      $_POST["id"] = $infoUser->getId();
-     var_dump($_POST);
-      var_dump($user);
+    //  var_dump($_POST);
+      // var_dump($user);
     // echo $infoUser->getUsrName();
     //  header("Location:index.php");exit;
   }
     // $errors = [];
-
-   echo "</pre>";
+  //  echo "</pre>";
   if ($_POST) {
     $user = new User($_POST);
     $user = $db->modifyUser($user);
@@ -38,8 +46,6 @@
     // }
   }
   else {
-
-
   }
   ?>
   <div class="container">
@@ -104,7 +110,7 @@
       </div>
       <div class="form-group">
         <label for="bio">Bio: </label>
-        <textarea id="bio" class="form-control" rows="5" name="bio" placeholder="Biografia" value="<?=$bioDefault?>"></textarea>
+        <textarea id="bio" class="form-control" rows="5" name="bio" placeholder="Biografia" value="<?= $bioDefault ?>"><?= $bioDefault ?></textarea>
       </div>
       <div class="form-group">
         <label for="avatar">Foto de Perfil: </label>

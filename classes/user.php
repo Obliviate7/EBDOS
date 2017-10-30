@@ -6,7 +6,6 @@
     private $birthDate;
     private $radioGenre;
     private $email;
-    private $email2;
     private $pass;
     private $country;
     private $province;
@@ -16,16 +15,10 @@
     private $address;
     private $webPage;
     private $bio;
-    private $password;
-
     public function __construct(Array $data) {
-
-
       if (isset($data["email"])){
-      $this->email = $data["email"];
+        $this->email = $data["email"];
       }
-
-
       if (isset( $data["pass"])){
         $this->pass = $data["pass"];
       }
@@ -38,23 +31,39 @@
       if (isset($data["birthDate"])){
         $this->birthDate = $data["birthDate"];
       }
-
-      // $this->usrName = $data["usrName"];
-      // $this->radioGenre =   $data["radioGenre"];
-      // $this->country =      $data["country"];
-      // $this->province =     $data["province"];
-      // $this->city =         $data["city"];
-      // $this->zipCode =      $data["zipCode"];
-      // $this->mobile =       $data["mobile"];
-      // $this->address =      $data["address"];
-      // $this->webPage =      $data["webPage"];
-      // $this->bio =          $data["bio"];
+      if (isset($data["radioGenre"])){
+        $this->radioGenre = $data["radioGenre"];
+      }
+      if (isset($data["country"])){
+        $this->country = $data["country"];
+      }
+      if (isset($data["province"])){
+        $this->province = $data["province"];
+      }
+      if (isset($data["city"])){
+        $this->city = $data["city"];
+      }
+      if (isset($data["zipCode"])){
+        $this->zipCode = $data["zipCode"];
+      }
+      if (isset($data["mobile"])){
+         $this->mobile = $data["mobile"];
+      }
+      if (isset($data["address"])){
+        $this->address = $data["address"];
+      }
+      if (isset($data["webPage"])){
+        $this->webPage = $data["webPage"];
+      }
+      if (isset($data["bio"])){
+       $this->bio =  $data["bio"];
+      }
       if (isset($data["id"])) {
-        $this->pass = $data["pass"];
+        // $this->pass = $data["pass"];
         $this->id = $data["id"];
       } else {
         // pass sin hashear
-        $this->pass = $data["pass"];
+        // $this->pass = $data["pass"];
         // Pass hasheado
         // $this->pass = password_hash($data["pass"], PASSWORD_DEFAULT);
       }
@@ -107,12 +116,6 @@
     }
     public function getRadioGenre() {
       return $this->radioGenre;
-    }
-    public function setEmail2($email2) {
-      $this->email2 = $email2;
-    }
-    public function getEmail2() {
-      return $this->email2;
     }
     public function setCountry($country) {
       $this->country = $country;

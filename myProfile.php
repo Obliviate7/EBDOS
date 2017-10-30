@@ -1,15 +1,10 @@
 <?php
   include_once("header.php");
-  // echo "<pre>";
+  echo "<pre>";
   if ($auth->isLogIn()) {
 
     $infoUser = $db->getByEmail($_SESSION['userLoginOk']);
 
-    // var_dump($infoUser);
-    // echo $infoUser->getUsrName();
-    //  header("Location:index.php");exit;
-  }
-    $errors = [];
     $usrNameDefault =     $infoUser->getUsrName();
     $usrSurnameDefault =  $infoUser->getUsrSurName();
     $birthDateDefault =   $infoUser->getBirthDate();
@@ -21,26 +16,43 @@
     $addressDefault =     $infoUser->getAddress();
     $webPageDefault =     $infoUser->getWebPage();
     $bioDefault =         $infoUser->getBio();
-  // echo "</pre>";
+
+     var_dump($infoUser);
+     var_dump($_POST);
+     $_POST["id"] = $infoUser->getId();
+     var_dump($_POST);
+      var_dump($user);
+    // echo $infoUser->getUsrName();
+    //  header("Location:index.php");exit;
+  }
+    // $errors = [];
+
+   echo "</pre>";
   if ($_POST) {
-    $errors = $validator->modifyUser($_POST, $db);
-    if (count($errors) == 0) {
-        $auth->logIn($_POST["email"]);
-      header("Location:index.php");
-    }
+    $user = new User($_POST);
+    $user = $db->modifyUser($user);
+    // $errors = $validator->modifyUser($_POST, $db);
+    // if (count($errors) == 0) {
+    //     $auth->logIn($_POST["email"]);
+    //   header("Location:index.php");
+    // }
+  }
+  else {
+
+
   }
   ?>
   <div class="container">
     <div class="page-header">
       <h2>Perfil</h2>
-    </div>
-    <?php foreach ($errors as $error): ?>
+  <!--  </div>
+      //foreach ($errors as $error): ?>
     <ul class="alert alert-danger">
       <li>
-        <?=$error?>
+        < <//$error?
       </li>
     </ul>
-    <?php endforeach; ?>
+    //endforeach; ?> -->
     <form class="" action="myProfile.php" method="POST" enctype="multipart/form-data">
       <div class="form-group">
         <label for="usrName">Nombre: </label>

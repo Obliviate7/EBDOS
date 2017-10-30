@@ -40,21 +40,22 @@
       }
     }
     public function modifyUser(User $usuario){
-      $query = $this->conn->prepare("UPDATE users SET usrName = :usrname, usrSurname = :usrsurname, email = :email, pass = :pass WHERE email = :email");
+      $userId = $usuario->getId();
+      echo $userId;
+      $query = $this->conn->prepare("UPDATE users SET usrName = :usrname, usrSurname = :usrsurname, pass = :pass WHERE id = $userId");
       $query->bindValue(":usrname", $usuario->getUsrName());
       $query->bindValue(":usrsurname", $usuario->getUsrSurname());
-      $query->bindValue(":email", $usuario->getEmail());
       $query->bindValue(":pass", $usuario->getPassword());
 
-      $query->bindValue(":birthDate", $usuario->getBirthDate());
-      $query->bindValue(":country", $usuario->getCountry());
-      $query->bindValue(":province", $usuario->getProvince());
-      $query->bindValue(":city", $usuario->getCity());
-      $query->bindValue(":zipCode", $usuario->getZipCode());
-      $query->bindValue(":mobile", $usuario->getMobile());
-      $query->bindValue(":address", $usuario->getAddress());
-      $query->bindValue(":webPage", $usuario->getWebPage());
-      $query->bindValue(":bio", $usuario->getBio());
+      // $query->bindValue(":birthDate", $usuario->getBirthDate());
+      // $query->bindValue(":country", $usuario->getCountry());
+      // $query->bindValue(":province", $usuario->getProvince());
+      // $query->bindValue(":city", $usuario->getCity());
+      // $query->bindValue(":zipCode", $usuario->getZipCode());
+      // $query->bindValue(":mobile", $usuario->getMobile());
+      // $query->bindValue(":address", $usuario->getAddress());
+      // $query->bindValue(":webPage", $usuario->getWebPage());
+      // $query->bindValue(":bio", $usuario->getBio());
 
       $query->execute();
     }

@@ -17,8 +17,15 @@
     private $webPage;
     private $bio;
     private $password;
+
     public function __construct(Array $data) {
+
+
+      if (isset($data["email"])){
       $this->email = $data["email"];
+      }
+
+
       if (isset( $data["pass"])){
         $this->pass = $data["pass"];
       }
@@ -32,9 +39,8 @@
         $this->birthDate = $data["birthDate"];
       }
 
-      $this->usrName = $data["usrName"];
+      // $this->usrName = $data["usrName"];
       // $this->radioGenre =   $data["radioGenre"];
-      // $this->email2 =       $data["email2"];
       // $this->country =      $data["country"];
       // $this->province =     $data["province"];
       // $this->city =         $data["city"];

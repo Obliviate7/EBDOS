@@ -35,6 +35,27 @@
       }
       return $errors;
     }
+    public function validateInformationProfile($data, db $db) {
+      $errors = [];
+      foreach ($data as $key => $value) {
+        $data[$key] = trim($value);
+      }
+      if (! $this->checkNameSurname($data['usrName'])){
+        $errors["usrName"] = "Ingresa un nombre valido";
+      }
+      if (! $this->checkNameSurname($data['usrSurname'])) {
+        $errors["usrSurname"] = "Ingresa un apellido valido";
+      }
+      if (strlen($data['pass']) >= 1){
+        if (! $this->checkPass($data['pass'])) {
+          $errors["pass"] = "Ingresa un password valido";
+        }
+        if (! $this->checkPass2($data['pass'], $data['pass2'])) {
+          $errors["pass2"] = "No coincide el password";
+        }
+      }
+      return $errors;
+    }
     public function loginUser($data, db $db) {
       $errors = [];
       foreach ($data as $key => $value) {

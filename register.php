@@ -8,7 +8,7 @@
 	}
 	$errors = [];
 	if ($_POST) {
-			$errors = $validator->validateInformation($_POST, $db);
+		$errors = $validator->validateInformation($_POST, $db);
 		if (!isset($errors["usrName"])) {
 			$usrNameDefault = $_POST["usrName"];
 		}
@@ -18,7 +18,7 @@
 		if (!isset($errors["usrSurname"])) {
 			$usrSurnameDefault = $_POST["usrSurname"];
 		}
-		if (count($errors) == 0) { 
+		if (count($errors) == 0) {
 			$user = new User($_POST);
 			$email = $_POST["email"];
 			$user->saveImage($email);

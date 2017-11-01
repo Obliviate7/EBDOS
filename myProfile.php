@@ -2,10 +2,6 @@
   /*
   ARREGLAR:
   7 hacer que funcione el radio button de GENERO
-  4  como la contraseña no la trae, agregar una verificacion que si la contraseña esta vacia dejar la anterior
-  1  agregar las verificaciones de cada campo, por ejemplo que sean mayor a 3 caracteres,
-  2  agregar la verificacion que coincida el pass dos veces
-  3  que muestre si hay errores
   5 hacer que funcione el subir imagen
   */
   include_once("header.php");
@@ -38,12 +34,16 @@
     // var_dump($user);
     // echo $infoUser->getUsrName();
     //  echo "</pre>";
-    $_POST["id"] = $infoUser->getId();
+    // $_POST["id"] = $infoUser->getId();
   } else {
     header("Location:index.php");exit;
   }
   $errors = [];
+  // var_dump($errors);
   if ($_POST) {
+      $_POST["id"] = $infoUser->getId();
+      // var_dump($_POST);
+    // echo "entro en POST";
     $errors = $validator->validateInformationProfile($_POST, $db);
     if (!isset($errors["usrName"])) {
       $usrNameDefault = $_POST["usrName"];
@@ -51,7 +51,15 @@
     if (!isset($errors["usrSurname"])) {
       $usrSurnameDefault = $_POST["usrSurname"];
     }
+    if (!isset($errors["usrSurname"])) {
+      $usrSurnameDefault = $_POST["usrSurname"];
+    }
+    // var_dump($errors);
     if (count($errors) == 0) {
+// var_dump($errors);
+ if(empty($_POST['pass'])){
+   $_POST['pass'] = $infoUser->getPassword();
+  }
       $user = new User($_POST);
       $user = $db->modifyUser($user);
       // $errors = $validator->modifyUser($_POST, $db);
@@ -77,13 +85,13 @@
     <div class="page-header">
       <h2>Perfil</h2>
     </div>
-    <?php  foreach ($errors as $error): ?>
-    <ul class="alert alert-danger">
-      <li>
-        <?$error?>
-      </li>
-    </ul>
-    <?php endforeach; ?>
+    <?php foreach ($errors as $error) : ?>
+		<ul class="alert alert-danger">
+			<li>
+				<?=$error?>
+			</li>
+		</ul>
+		<?php endforeach; ?>
     <form class="" action="myProfile.php" method="POST" enctype="multipart/form-data">
       <div class="form-group">
         <label for="usrName">Nombre: </label>

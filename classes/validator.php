@@ -48,7 +48,7 @@
       }
       if (strlen($data['pass']) >= 1){
         if (! $this->checkPass($data['pass'])) {
-          $errors["pass"] = "Ingresa un password valido";
+          $errors["pass"] = "Ingresa un password valido, debe tener minimo 1 letra y en total 8 caracteres";
         }
         if (! $this->checkPass2($data['pass'], $data['pass2'])) {
           $errors["pass2"] = "No coincide el password";

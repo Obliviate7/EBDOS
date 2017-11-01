@@ -21,7 +21,6 @@
 		if (count($errors) == 0) {
 			$user = new User($_POST);
 			$email = $_POST["email"];
-			$user->saveImage($email);
 			$user = $db->saveUser($user);
 			header("Location:index.php?mail=$email");exit;
 		}

@@ -69,11 +69,11 @@
       }
     }
     public function saveImage() {
-      // $imgName=$_FILES["avatar"]["name"];
-      // $imgFile=$_FILES["avatar"]["tmp_name"];
-      // $ext = pathinfo($imgName, PATHINFO_EXTENSION);
-      // $myFile = "avatars/" . $this->getEmail() . "." . $ext;
-      // move_uploaded_file($imgFile, $myFile);
+      $imgName=$_FILES["avatar"]["name"];
+      $imgFile=$_FILES["avatar"]["tmp_name"];
+      $ext = pathinfo($imgName, PATHINFO_EXTENSION);
+      $myFile = "avatars/" . $this->getEmail() . "." . $ext;
+      move_uploaded_file($imgFile, $myFile);
     }
     public function setId($id) {
       $this->id = $id;

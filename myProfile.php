@@ -52,6 +52,7 @@
         $_POST['pass'] = $infoUser->getPassword();
       }
       $user = new User($_POST);
+      $user->saveImage();
       $user = $db->modifyUser($user);
     }
     $infoUser = $db->getByEmail($_SESSION['userLoginOk']);
@@ -67,10 +68,12 @@
     $webPageDefault =     $infoUser->getWebPage();
     $bioDefault =         $infoUser->getBio();
   }
+  $img = glob("avatars/". $infoUser->getEmail() .  ".*")[0];
 ?>
   <div class="container">
     <div class="page-header">
       <h2>Perfil</h2>
+      <img src="<?=$img?>" alt="" width="100">
     </div>
     <?php foreach ($errors as $error) : ?>
 		<ul class="alert alert-danger">

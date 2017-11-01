@@ -56,6 +56,21 @@
       }
       return $errors;
     }
+    public function forgotPassword($data, db $db) {
+      $errors = [];
+      foreach ($data as $key => $value) {
+        $data[$key] = trim($value);
+      }
+      if ($data["email"] == "") {
+        $errors["email"] = "Debes completar el mail";
+      }
+      else if (filter_var($data["email"], FILTER_VALIDATE_EMAIL) == false) {
+        $errors["email"] = "Ingresa un mail valido";
+      } else if ($db->getByEmail($data["email"]) == NULL) {
+        $errors["email"] = "El usuario no existe";
+      }
+      return $errors;
+    }
     public function loginUser($data, db $db) {
       $errors = [];
       foreach ($data as $key => $value) {

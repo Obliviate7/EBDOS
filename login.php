@@ -43,7 +43,7 @@
         <label><input type="checkbox" name="rememberMe">Recuerdame</label>
       </div>
       <div class="forgot">
-        <a href="forgotPassword.php" class="buttonForgotPassword">Olvidé mi contraseña</a>
+        <a href="forgotPass.php" class="buttonForgotPassword">Olvidé mi contraseña</a>
       </div>
       <div class="form-group">
         <input class="btn btn-success" type="submit" >

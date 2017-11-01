@@ -67,8 +67,10 @@
     $webPageDefault =     $infoUser->getWebPage();
     $bioDefault =         $infoUser->getBio();
   }
-  $img = glob("avatars/". $infoUser->getEmail() .  ".*")[0];
-?>
+  if (glob("avatars/". $infoUser->getId() .  ".*")){
+    $img = glob("avatars/". $infoUser->getId() .  ".*")[0];
+  }
+  ?>
   <div class="container">
     <div class="page-header">
       <h2>Perfil de <?=$infoUser->getEmail()?></h2>

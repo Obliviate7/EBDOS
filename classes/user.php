@@ -72,7 +72,8 @@
       $imgName=$_FILES["avatar"]["name"];
       $imgFile=$_FILES["avatar"]["tmp_name"];
       $ext = pathinfo($imgName, PATHINFO_EXTENSION);
-      $myFile = "avatars/" . $this->getEmail() . "." . $ext;
+      $id = $this->getId();
+      $myFile = "avatars/" . $id . "." . $ext;
       move_uploaded_file($imgFile, $myFile);
     }
     public function setId($id) {

@@ -20,10 +20,7 @@
         'bio' =>  $usuario->getBio();
         'password'  => $pass
       ]);
-      if (writeUserFile($jsonUser)) {
-        uploadPhoto($photo);
-      }
-      return $result;
+      $usuario->writeUserFile($jsonUser);
     }
 
     public function writeUserFile($jsonUser2) {
@@ -31,23 +28,6 @@
       $result = fwrite($fp, $jsonUser2 . PHP_EOL);
       return $result;
     }
-
-    public function uploadPhoto($photo){
-      if (count($photo)) {
-          $avatarFileName = $photo['name'];
-          $avatarFile = $photo['tmp_name'];
-          $avatarExtension = pathinfo($avatarFileName, PATHINFO_EXTENSION);
-          $hash= sha1($user['username']);
-          $result = move_uploaded_file($avatarFile, 'avatars/' . $hash . '.' . $avatarExtension);
-          $arch= $hash.".".$avatarExtension;
-           return $arch;
-      }
-      else {
-        return "";
-      }
-    }
-
-
     public function getAll() {
       $fp = fopen('users.json', 'r');
       $allDbJSON = json_decode(fgets($fp), true);

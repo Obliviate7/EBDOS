@@ -72,7 +72,7 @@
 ?>
   <div class="container">
     <div class="page-header">
-      <h2>Perfil</h2>
+      <h2>Perfil de <?=$infoUser->getEmail()?></h2>
       <img src="<?=$img?>" alt="" width="100">
     </div>
     <?php foreach ($errors as $error) : ?>

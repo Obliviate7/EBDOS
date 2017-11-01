@@ -1,8 +1,7 @@
 <?php
   /*
   ARREGLAR:
-  7 hacer que funcione el radio button de GENERO
-  5 hacer que funcione el subir imagen
+  - hacer que funcione el radio button de GENERO
   */
   include_once("header.php");
   // echo "<pre>";

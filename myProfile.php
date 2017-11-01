@@ -30,20 +30,13 @@
     //activar los pre para ver los errores
     //  var_dump($infoUser);
     //  var_dump($_POST);
-    //  var_dump($_POST);
-    // var_dump($user);
-    // echo $infoUser->getUsrName();
     //  echo "</pre>";
-    // $_POST["id"] = $infoUser->getId();
   } else {
     header("Location:index.php");exit;
   }
   $errors = [];
-  // var_dump($errors);
   if ($_POST) {
-      $_POST["id"] = $infoUser->getId();
-      // var_dump($_POST);
-    // echo "entro en POST";
+    $_POST["id"] = $infoUser->getId();
     $errors = $validator->validateInformationProfile($_POST, $db);
     if (!isset($errors["usrName"])) {
       $usrNameDefault = $_POST["usrName"];
@@ -54,18 +47,12 @@
     if (!isset($errors["usrSurname"])) {
       $usrSurnameDefault = $_POST["usrSurname"];
     }
-    // var_dump($errors);
     if (count($errors) == 0) {
-// var_dump($errors);
- if(empty($_POST['pass'])){
-   $_POST['pass'] = $infoUser->getPassword();
-  }
+      if(empty($_POST['pass'])){
+        $_POST['pass'] = $infoUser->getPassword();
+      }
       $user = new User($_POST);
       $user = $db->modifyUser($user);
-      // $errors = $validator->modifyUser($_POST, $db);
-      // if (count($errors) == 0) {
-      //     $auth->logIn($_POST["email"]);
-      //   header("Location:index.php");
     }
     $infoUser = $db->getByEmail($_SESSION['userLoginOk']);
     $usrNameDefault =     $infoUser->getUsrName();

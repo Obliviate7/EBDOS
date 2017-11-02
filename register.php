@@ -3,6 +3,8 @@
 	$emailDefault = "";
 	$usrNameDefault = "";
 	$usrSurnameDefault = "";
+	$hidden="form-group hidden";
+	$unhidden="";
 	if ($auth->isLogIn()) {
 		header("Location:index.php");exit;
 	}
@@ -22,14 +24,24 @@
 			$user = new User($_POST);
 			$email = $_POST["email"];
 			$user = $db->saveUser($user);
-			header("Location:index.php?mail=$email");exit;
+			$hidden="";
+			$hidden="form-group hidden";
+			$unhidden="form-group hidden";
+			if ($hidden="") {
+				sleep(10);
+				header("Location:index.php?mail=$email");exit;
+			}
 		}
 	}
 ?>
 	<div class="container">
 		<div class="page-header">
-			<h2>Registro</h2>
+			<div class="<?=$hidden?>">
+				<h2>Felicitaciones te registraste con exito!!!!!!1</h2>
+			</div>
+			<h2 class="<?=$unhidden?>">Registro</h2>
 		</div>
+		<div class="<?=$unhidden?>">
 		<?php foreach ($errors as $error) : ?>
 		<ul class="alert alert-danger">
 			<li>
@@ -62,4 +74,5 @@
 				<input class="btn btn-success" type="submit" >
 			</div>
 		</form>
+		</div>
 		<?php include("footer.php"); ?>

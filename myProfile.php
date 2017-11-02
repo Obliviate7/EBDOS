@@ -31,6 +31,7 @@
     //  var_dump($_POST);
     //  echo "</pre>";
   } else {
+    sleep(10);
     header("Location:index.php");exit;
   }
   $errors = [];
@@ -70,7 +71,7 @@
   if (glob("avatars/". $infoUser->getId() .  ".*")){
     $img = glob("avatars/". $infoUser->getId() .  ".*")[0];
   }
-  ?>
+?>
   <div class="container">
     <div class="page-header">
       <h2>Perfil de <?=$infoUser->getEmail()?></h2>

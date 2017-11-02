@@ -28,7 +28,7 @@
 			$hidden="form-group hidden";
 			$unhidden="form-group hidden";
 			if ($hidden="") {
-				sleep(10);
+				usleep(5000000);
 				header("Location:index.php?mail=$email");exit;
 			}
 		}
@@ -37,7 +37,7 @@
 	<div class="container">
 		<div class="page-header">
 			<div class="<?=$hidden?>">
-				<h2>Felicitaciones te registraste con exito!!!!!!1</h2>
+				<h2>Felicitaciones te registraste con exito!!!!!!</h2>
 			</div>
 			<h2 class="<?=$unhidden?>">Registro</h2>
 		</div>

@@ -31,7 +31,6 @@
     //  var_dump($_POST);
     //  echo "</pre>";
   } else {
-    sleep(10);
     header("Location:index.php");exit;
   }
   $errors = [];

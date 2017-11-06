@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>EBDOS</title>
-    <script src="js/functions.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
     <style media="screen">
     .hidden{
       display: none;
@@ -39,6 +39,24 @@
             <li><a href="#">Hombres</a></li>
             <li><a href="#">Conocenos</a></li>
             <li><a href="faq.php">FAQ's</a></li>
+            <li><a id="AllUsers"></a></li>
+            <script type="text/javascript">
+            function usuarioscant(){
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("AllUsers").innerHTML =
+                  this.responseText;
+                }
+              };
+              xhttp.open("GET", "usuariostodos.php", true);
+              xhttp.send();
+            }
+              usuarioscant();
+              setInterval(function(){
+                usuarioscant();
+              }, 5000);
+            </script>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <?php if ($auth->isLogIn()){?>

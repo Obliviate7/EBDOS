@@ -41,7 +41,7 @@
             <li><a href="faq.php">FAQ's</a></li>
             <li><a id="AllUsers"></a></li>
             <script type="text/javascript">
-            function usuarioscant(){
+            function usersTotal(){
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -49,12 +49,12 @@
                   this.responseText;
                 }
               };
-              xhttp.open("GET", "usuariostodos.php", true);
+              xhttp.open("GET", "usersCant.php", true);
               xhttp.send();
             }
-              usuarioscant();
+              usersTotal();
               setInterval(function(){
-                usuarioscant();
+                usersTotal();
               }, 5000);
             </script>
           </ul>

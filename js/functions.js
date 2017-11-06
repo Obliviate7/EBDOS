@@ -28,7 +28,6 @@ function verifSurNameJs(){
 function verifEmailJs(){
   var regexEmail=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   var emailJs = document.getElementById("email").value;
-  // var emailJs = document.getElementById("usrSurname").value.length;
   if(! (regexEmail.test(emailJs))){
    document.getElementById("submitReg").disabled = true;
    }else{

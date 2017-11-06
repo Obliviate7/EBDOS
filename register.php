@@ -57,9 +57,6 @@
 				<label for="usrName">Nombre: </label>
 				<input id="usrName" oninput="verifNameJs()" class="form-control" type="text" name="usrName" placeholder="Ingresa tu nombre" value="<?=$usrNameDefault?>">
 			</div>
-<div id="demos" class="">
-
-</div>
 			<div class="form-group">
 				<label for="usrSurname">Apellido: </label>
 				<input id="usrSurname" oninput="verifSurNameJs()" class="form-control" type="text" name="usrSurname" placeholder="Ingresa tu apellido" value="<?=$usrSurnameDefault?>">
@@ -67,6 +64,9 @@
 			<div class="form-group">
 				<label for="email">Email: </label>
 				<input id="email" oninput="verifEmailJs()" class="form-control" type="text" name="email" placeholder="ejemplo@correo.com" value="<?=$emailDefault?>">
+			</div>
+			<div id="mailExist" class="">
+
 			</div>
 			<div class="form-group">
 				<label for="pass">Contraseña: </label>

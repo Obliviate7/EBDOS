@@ -26,9 +26,9 @@
 		}
 	}
 ?>
-	<div class="container">
+	<div class="container containerReg">
 		<div class="page-header">
-			<h2>Registro</h2>
+			<h2 class="titleRegister">Registro</h2>
 		</div>
 		<?php foreach ($errors as $error) : ?>
 		<ul class="alert alert-danger">
@@ -56,10 +56,11 @@
 			</div>
 			<div class="form-group hidden" id="pass2">
 				<label for="pass2">Confirmar contraseña: </label>
-				<input class="form-control" type="password" name="pass2" placeholder="********">
+				<input class="form-control conf-pass" type="password" name="pass2" placeholder="********">
 			</div>
 			<div class="form-group">
-				<input class="btn btn-success" type="submit" >
+				<input class="btn btn-lg btn-primary btn-block submitLog" type="submit" value="CONTINUAR">
 			</div>
 		</form>
+	</div>
 		<?php include("footer.php"); ?>

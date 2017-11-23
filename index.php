@@ -1,5 +1,4 @@
 <?php include("header.php")?>
-<div class="container-fluid">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -15,7 +14,7 @@
     </div>
 
     <div class="item">
-      <img src="images/girlgrass.jpeg" alt="GirlGrass">
+      <img class="imgCarrousel" src="images/girlgrass.jpeg" alt="GirlGrass">
     </div>
 
     <div class="item">
@@ -30,6 +29,5 @@
   <a class="right carousel-control" href="#myCarousel" data-slide="next">
     <span class="sr-only">Siguiente</span>
   </a>
-  </div>
 </div>
 <?php include("footer.php"); ?>

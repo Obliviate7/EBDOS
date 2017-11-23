@@ -1,2 +1,182 @@
 body{
+  background-image: url(../images/geometricos.png);
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  color: black;
+  text-align: center;
+  font-size: 60px;
+  text-decoration: none;
+}
+
+.mainHeader {
+  text-align: center;
+  background-color: white;
+  border-bottom: 2px solid;
+
+}
+
+.mainHeader a {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+.titleLink {
+  text-decoration: none;
+  color: black;
+}
+.titleLink :hover {
+  text-decoration: none;
+  color: black;
+}
+
+/* Edicion de NAV */
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  font-size: 18px;
+  font-family: 'Lora', serif;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #af9f82;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+.navbar-default {
+    background-color: white;
+    border-color: white;
+}
+.navbar-toggle {
+  float: left;
+}
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: #af9f82;
+}
+
+.logButtons, .logButtons:focus{
+  text-decoration: none;
+  color: #af9f82;
+}
+.logButtons:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.layout {
+  
+}
+/* Carousel */
+
+.carousel-inner {
+width:100% !important;
+height: 830px !important;
+}
+
+
+/* FAQ's */
+.containerFaqs{
+  font-family: 'Lora', serif;
+ background-color: white;
+ padding-bottom: 20px;
+ padding-top: 5px;
+}
+
+.page-header {
+  text-align: center;
+  border-bottom: 1px black solid;
+}
+.containerFaqs p {
+  text-align: center;
+}
+
+.panel-default>.panel-heading {
+  background-color: white;
+  border-color: black;
+}
+/* LOGIN */
+.formLogin {
+  border-radius: 20px;
+}
+.contLogin {
+  font-family: 'Lora', serif;
+  background-color: white;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 10px;
+  width: 500px;
+  text-transform: uppercase;
+
+}
+.titleLogin {
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
+}
+.page-headerLog{
+  margin-top: 15px;
+}
+.forgot{
+    float: left;
+    text-align: right;
+    display: inline-block
+}
+
+.forgot a {
+  color: #af9f82;
+}
+.forgot a :hover {
+  color: black;
+}
+
+.submitLog {
+  background-color: #e0bd82;
+  border-color: #e0bd82;
+  color: white;
+}
+.submitLogt:hover {
+  background-color: #ceaa71;
+  border-color: #ceaa71;
+  color: white;
+}
+.submitLog:active, .submitLog:focus {
+  background-color: #cc9f5b;
+  border-color: #cc9f5b;
+  color: white;
+}
+
+input {
+  text-align: center;
+}
+/* REGISTER */
+.containerReg {
+  font-family: 'Lora', serif;
+  text-align: center;
+  background-color: white;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 10px;
+  width: 500px;
+  text-transform: uppercase;
+}
+.titleRegister {
+  text-align: center;
+  margin-top: 0;
+}
+.containerRegister p {
+  text-align: center;
+}
+
+.formRegister {
+  border-radius: 20px;
+}
+
+.conf-pass {
+  margin-bottom: 15px;
 }

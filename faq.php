@@ -1,6 +1,6 @@
 <?php  ?>
 <?php include("header.php"); ?>
-<div class="container">
+<div class="container-fluid">
 <div class="containerFaqs">
   <h2 class="page-header">FAQ'S</h2>
   <p>Tienes preguntas? aca te respondemos las mas frecuentes, si no encuentras tu pregunta aca, envianos un mail a "consultas@elbauldorado.com"</p>
@@ -8,7 +8,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">1) Quiero vender, Como puedo publicar?</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> Quiero vender, Como puedo publicar?</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
@@ -27,7 +27,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">2) Quiero vender, Donde se puede dejar la ropa?</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"> Quiero vender, Donde se puede dejar la ropa?</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
@@ -37,7 +37,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">3) Quiero comprar, Donde puedo retirar la ropa?</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"> Quiero comprar, Donde puedo retirar la ropa?</a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
@@ -47,7 +47,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">4) Quiero comprar, Qué métodos de pago se ofrecen?</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"> Quiero comprar, Qué métodos de pago se ofrecen?</a>
         </h4>
       </div>
       <div id="collapse4" class="panel-collapse collapse">
@@ -57,7 +57,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">5) Quiero comprar, puedo cambiar alguna prenda ya comprada?</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"> Quiero comprar, puedo cambiar alguna prenda ya comprada?</a>
         </h4>
       </div>
       <div id="collapse5" class="panel-collapse collapse">

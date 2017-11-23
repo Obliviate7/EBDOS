@@ -55,8 +55,9 @@
 /* Sidebar Styles */
 .hiddenOnLg {
   display: none;
-
 }
+
+
 .sidebar-nav {
     position: absolute;
     top: 0;
@@ -138,9 +139,10 @@
         width: 250px;
     }
 
-    .hiddenOnLg {
+    /*.hiddenOnLg {
       display: block;
-    }
+    }*/
+x
     #page-content-wrapper {
         padding: 20px;
         position: relative;

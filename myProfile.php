@@ -71,9 +71,9 @@
     $img = glob("avatars/". $infoUser->getId() .  ".*")[0];
   }
   ?>
-  <div class="container">
+  <div class="container containerProfile">
     <div class="page-header">
-      <h2>Perfil de <?=$infoUser->getEmail()?></h2>
+      <h2>Perfil de <?=$infoUser->getUsrName()?></h2>
       <img src="<?=$img?>" alt="" width="100">
     </div>
     <?php foreach ($errors as $error) : ?>
@@ -146,10 +146,13 @@
       </div>
       <div class="form-group hidden" id="pass2">
 				<label for="pass2">Confirmar contraseña: </label>
-				<input class="form-control" type="password" name="pass2" placeholder="********">
+				<input class="form-control conf-pass" type="password" name="pass2" placeholder="********">
 			</div>
       <div class="form-group">
-        <input class="btn btn-success" type="submit" >
+        <input class="btn btn-lg btn-primary btn-block submitLog" type="submit" >
       </div>
     </form>
+  </div>
+</div>
+
     <?php include("footer.php"); ?>

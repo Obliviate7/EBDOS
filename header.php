@@ -56,7 +56,8 @@
                </li>
                <?php } ?>
                <li>
-                 <a href="#" class="layout" onclick="changeLayout();return false;">LAYOUT</a>
+                 <a href="#" class="layout" onclick="changeLayout()">LAYOUT</a>
+                 <!-- <button type="button" class="btn btn-default" onclick="changeLayout()" name="button">TH</button> -->
                </li>
             </ul>
        </div>

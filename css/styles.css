@@ -1,5 +1,5 @@
 body{
-  background-image: url(../images/geometricos.png);
+  background-image: url("../images/geometricos.png");
 }
 
 .title {
@@ -70,7 +70,7 @@ body{
 }
 
 .layout {
-  
+
 }
 /* Carousel */
 
@@ -140,7 +140,7 @@ height: 830px !important;
   border-color: #e0bd82;
   color: white;
 }
-.submitLogt:hover {
+.submitLog:hover {
   background-color: #ceaa71;
   border-color: #ceaa71;
   color: white;
@@ -179,4 +179,17 @@ input {
 
 .conf-pass {
   margin-bottom: 15px;
+}
+
+/*My Profile*/
+
+.containerProfile {
+  font-family: 'Lora', serif;
+  text-align: center;
+  background-color: white;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 10px;
+  width: 600px;
+  text-transform: uppercase;
 }

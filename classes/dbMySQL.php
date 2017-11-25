@@ -1,13 +1,16 @@
 <?php
   require_once("user.php");
   require_once("db.php");
+
   class dbMySQL extends db {
     private $conn;
     public function __construct() {
-      $dsnDb = 'mysql:host=localhost;dbname=el_baul_dorado;
-      charset=utf8mb4;port=3306';
+      $dsnDb = 'mysql:host=localhost;
+      dbname=el_baul_dorado;
+      charset=utf8mb4;
+      port=3306';
       $userDb ="root";
-      $passDb = "Liliana01";
+      $passDb = "";
       try {
         $this->conn = new PDO($dsnDb, $userDb, $passDb);
       } catch (Exception $e) {

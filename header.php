@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>EBDOS</title>
+    <script type="text/javascript" src="js/functions.js"></script>
     <style media="screen">
     .hidden{
       display: none;
@@ -37,6 +38,24 @@
            <li><a href="#">HOMBRES</a></li>
            <li><a href="#">MARCAS</a></li>
            <li><a href="faq.php">FAQ'S</a></li>
+           <li><a id="AllUsers"></a></li>
+           <script type="text/javascript">
+           function usersTotal(){
+             var xhttp = new XMLHttpRequest();
+             xhttp.onreadystatechange = function() {
+               if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("AllUsers").innerHTML =
+                 this.responseText;
+               }
+             };
+             xhttp.open("GET", "usersCant.php", true);
+             xhttp.send();
+           }
+             usersTotal();
+             setInterval(function(){
+               usersTotal();
+             }, 5000);
+           </script>
          </ul>
            <ul class="nav navbar-nav navbar-right">
                <?php if ($auth->isLogIn()){?>

@@ -150,10 +150,10 @@ height: 830px !important;
   border-color: #cc9f5b;
   color: white;
 }
-
 input {
   text-align: center;
 }
+
 /* REGISTER */
 .containerReg {
   font-family: 'Lora', serif;
@@ -192,4 +192,8 @@ input {
   padding-bottom: 10px;
   width: 600px;
   text-transform: uppercase;
+}
+.profilePic {
+  border-radius: 80px;
+
 }

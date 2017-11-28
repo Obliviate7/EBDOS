@@ -74,7 +74,7 @@
   <div class="container containerProfile">
     <div class="page-header">
       <h2>Perfil de <?=$infoUser->getUsrName()?></h2>
-      <img src="<?=$img?>" alt="" width="100">
+      <img class="profilePic" src="<?=$img?>" alt="" width="100">
     </div>
     <?php foreach ($errors as $error) : ?>
 		<ul class="alert alert-danger">

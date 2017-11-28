@@ -10,7 +10,7 @@
       charset=utf8mb4;
       port=3306';
       $userDb ="root";
-      $passDb = "";
+      $passDb = "root";
       try {
         $this->conn = new PDO($dsnDb, $userDb, $passDb);
       } catch (Exception $e) {

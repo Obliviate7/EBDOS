@@ -2,6 +2,7 @@
   include("header.php");
   $emailDefault = "";
   if ($auth->isLogIn()) {
+    sleep(10);
     header("Location:index.php");exit;
   }
   $errors = [];

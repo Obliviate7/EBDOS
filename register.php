@@ -3,6 +3,8 @@
 	$emailDefault = "";
 	$usrNameDefault = "";
 	$usrSurnameDefault = "";
+	$hidden="form-group hidden";
+	$unhidden="";
 	if ($auth->isLogIn()) {
 		header("Location:index.php");exit;
 	}
@@ -22,14 +24,27 @@
 			$user = new User($_POST);
 			$email = $_POST["email"];
 			$user = $db->saveUser($user);
-			header("Location:index.php?mail=$email");exit;
+			$hidden="";
+			$unhidden="form-group hidden";
+?>
+			<script type="text/javascript">
+				function reDir(){
+				 location.href ="index.php";
+				}
+				setTimeout ("reDir()", 3000);
+			</script>
+<?php
 		}
 	}
 ?>
 	<div class="container containerReg">
 		<div class="page-header">
-			<h2 class="titleRegister">Registro</h2>
+			<div class="<?=$hidden?>">
+				<h2>Felicitaciones te registraste con exito!!!!!!</h2>
+			</div>
+			<h2 class="<?=$unhidden?> titleRegister" >Registro</h2>
 		</div>
+		<div class="<?=$unhidden?>">
 		<?php foreach ($errors as $error) : ?>
 		<ul class="alert alert-danger">
 			<li>
@@ -40,27 +55,30 @@
 		<form class="" action="register.php" method="POST" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="usrName">Nombre: </label>
-				<input id="usrName" class="form-control" type="text" name="usrName" placeholder="Ingresa tu nombre" value="<?=$usrNameDefault?>">
+				<input id="usrName" oninput="verifNameJs()" class="form-control" type="text" name="usrName" placeholder="Ingresa tu nombre" value="<?=$usrNameDefault?>">
 			</div>
 			<div class="form-group">
 				<label for="usrSurname">Apellido: </label>
-				<input id="usrSurname" class="form-control" type="text" name="usrSurname" placeholder="Ingresa tu apellido" value="<?=$usrSurnameDefault?>">
+				<input id="usrSurname" oninput="verifSurNameJs()" class="form-control" type="text" name="usrSurname" placeholder="Ingresa tu apellido" value="<?=$usrSurnameDefault?>">
 			</div>
 			<div class="form-group">
 				<label for="email">Email: </label>
-				<input id="email" class="form-control" type="text" name="email" placeholder="ejemplo@correo.com" value="<?=$emailDefault?>">
+				<input id="email" oninput="verifEmailJs()" class="form-control" type="text" name="email" placeholder="ejemplo@correo.com" value="<?=$emailDefault?>">
+			</div>
+			<div id="mailExist" class="">
+
 			</div>
 			<div class="form-group">
 				<label for="pass">Contraseña: </label>
-				<input id="pass" class="form-control" type="password" name="pass" placeholder="********" onfocus="confirmPass();">
+				<input id="pass" oninput="verifPassJs()" class="form-control" type="password" name="pass" placeholder="********" onfocus="confirmPass();">
 			</div>
 			<div class="form-group hidden" id="pass2">
 				<label for="pass2">Confirmar contraseña: </label>
-				<input class="form-control conf-pass" type="password" name="pass2" placeholder="********">
+				<input id="pass2Val" oninput="verifPass2Js()" class="form-control conf-pass" type="password" name="pass2" placeholder="********">
 			</div>
 			<div class="form-group">
-				<input class="btn btn-lg btn-primary btn-block submitLog" type="submit" value="CONTINUAR">
+				<input id="submitReg" class="btn btn-lg btn-primary btn-block submitLog" type="submit" value="CONTINUAR">
 			</div>
 		</form>
-	</div>
+		</div>
 		<?php include("footer.php"); ?>

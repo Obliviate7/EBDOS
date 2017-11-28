@@ -28,7 +28,8 @@
     public function getAll() {
       $query = $this->conn->prepare("SELECT * FROM users");
       $query->execute();
-      $all = $query->fetchAll();
+      $all = $query->rowCount();
+      echo "$all";
     }
     public function getByEmail($usuario) {
       $query = $this->conn->prepare("SELECT * FROM users WHERE email = :email");

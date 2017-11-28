@@ -40,7 +40,8 @@
 	<div class="container containerReg">
 		<div class="page-header">
 			<div class="<?=$hidden?>">
-				<h2>Felicitaciones te registraste con exito!!!!!!</h2>
+				<h2>Felicitaciones</h2>
+				<p>Te has registrado con exito!!!</p>
 			</div>
 			<h2 class="<?=$unhidden?> titleRegister" >Registro</h2>
 		</div>
@@ -81,4 +82,5 @@
 			</div>
 		</form>
 		</div>
+	</div>
 		<?php include("footer.php"); ?>

@@ -23,9 +23,9 @@
     }
   }
 ?>
-<div class="container">
+<div class="container containerForgotPass">
   <div class="page-header">
-    <h2>Olvide mi contraseña</h2>
+    <h2 class="titleForgotPass">Olvide mi contraseña</h2>
   </div>
   <?php foreach ($errors as $error): ?>
   <ul class="alert alert-danger">
@@ -41,7 +41,8 @@
       <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com" name="email" value="<?= $emailDefault ?>">
     </div>
     <div class="form-group">
-      <input class="btn btn-success" type="submit" >
+      <input class="btn btn-lg btn-primary btn-block submitLog" type="submit" value="CONTINUAR" >
     </div>
   </form>
+</div>
 <?php include("footer.php"); ?>

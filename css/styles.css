@@ -172,7 +172,7 @@ input {
 .containerRegister p {
   text-align: center;
 }
-
+width
 .formRegister {
   border-radius: 20px;
 }
@@ -195,5 +195,37 @@ input {
 }
 .profilePic {
   border-radius: 80px;
+}
 
+/*Forgot Pass*/
+.titleForgotPass {
+  text-align: center;
+  margin-top: 0;
+}
+
+.containerForgotPass {
+  font-family: 'Lora', serif;
+  text-align: center;
+  background-color: white;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 10px;
+  width: 600px;
+  text-transform: uppercase;
+}
+
+/*Collapsing NavBar earlier*/
+@media (min-width: 768px) and (max-width: 1200px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
 }
